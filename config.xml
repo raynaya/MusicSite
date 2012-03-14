@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-	<param name="mp3" value="test.mp3" />
+	<param name="mp3" value="feel.mp3" />
 	<param name="width" value="250" />
 	<param name="showstop" value="1"/>
 	<param name="showvolume" value="1"/>
