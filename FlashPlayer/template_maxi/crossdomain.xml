@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+     <allow-access-from domain="C:\Documents and Settings\shamik\Desktop\MusicSite\FlashPlayer\template_maxi\player_mp3_maxi.swf" secure="false" />
+</cross-domain-policy>

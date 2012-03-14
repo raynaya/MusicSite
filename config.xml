@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<param name="mp3" value="test.mp3" />
+	<param name="width" value="250" />
+	<param name="showstop" value="1"/>
+	<param name="showvolume" value="1"/>
+	<param name="loadingcolor" value="ededed"/>
+	<param name="bgcolor" value="EFEFF1"/>
+	<param name="bgcolor1" value="EFEFF1"/>
+	<param name="bgcolor2" value="EFEFF1"/>
+	<param name="buttoncolor" value="black"/>
+</config>

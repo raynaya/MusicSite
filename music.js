@@ -1,6 +1,8 @@
 $(document).ready(function () {
-$('#register').slideToggle();
-			$('.gbmai').click(function(){ $('#register').slideToggle()});
+		$("#jqxMenu").jqxMenu({ width: '180', mode: 'vertical', theme: 'classic' });
+            $("#jqxMenu").css('visibility', 'visible');
+		$('#register').slideToggle();
+		$('#registration').click(function(){ $('#register').slideToggle()});
 
             var theme = getTheme();
             $('#sendButton').jqxButton({ width: 60, height: 25, theme: theme });
@@ -20,33 +22,41 @@ $('#register').slideToggle();
             $('#birthInput').jqxDateTimeInput({ theme: theme, height: 22, value: $.jqx._jqxDateTimeInput.getDateTime(date) });
             $("#register").jqxExpander({ width: '300px', theme: theme, showArrow: false, toggleMode: 'none' });
             // initialize validator.
-            $('#testForm').jqxValidator({
-             rules: [
-                    { input: '#userInput', message: 'Username is required!', action: 'keyup, blur', rule: 'required' },
-                    { input: '#userInput', message: 'Your username must be between 3 and 12 characters!', action: 'keyup', rule: 'length=3,12' },
-                    { input: '#realNameInput', message: 'Your real name must contain only letters!', action: 'keyup', rule: 'notNumber' },
-                    { input: '#realNameInput', message: 'Your real name must be between 3 and 12 characters!', action: 'keyup', rule: 'length=3,12' },
-                    { input: '#birthInput', message: 'Invalid date! The entered date should be between 1/1/1900 and 1/1/2012.', action: 'valuechanged', rule: function () {
-                        var date = $('#birthInput').jqxDateTimeInput('value');
-                        var result = date.dateTime.getFullYear() >= 1900 && date.dateTime.getFullYear() <= 2012;
-                        return result;
-                    }
-                    },
-                    { input: '#passwordInput', message: 'Password is required!', action: 'keyup', rule: 'required' },
-                    { input: '#passwordInput', message: 'Your password must be between 4 and 12 characters!', action: 'keyup', rule: 'length=4,12' },
-                    { input: '#passwordConfirmInput', message: 'Password is required!', action: 'keyup', rule: 'required' },
-                    { input: '#passwordConfirmInput', message: 'Passwords doesn\'t match!', action: 'keyup, focus', rule: function (input) {
-                        if (input.val() === $('#passwordInput').val()) {
-                            return true;
-                        }
-                        return false;
-                    }
-                    },
-                    { input: '#emailInput', message: 'E-mail is required!', action: 'keyup', rule: 'required' },
-                    { input: '#emailInput', message: 'Invalid e-mail!', action: 'keyup', rule: 'email' },
-                    { input: '#ssnInput', message: 'Invalid SSN!', action: 'valuechanged, blur', rule: 'ssn' },
-                    { input: '#phoneInput', message: 'Invalid phone number!', action: 'valuechanged, blur', rule: 'phone' },
-                    { input: '#zipInput', message: 'Invalid zip code!', action: 'valuechanged, blur', rule: 'zipCode' },
-                    { input: '#acceptInput', message: 'You have to accept the terms', action: 'change', rule: 'required',position: 'left:-200,0'}],position: 'left:-200,0', theme: theme
+		$('#jqxMenu').bind('itemclick', function (event) {
+                var args = event.args;
+                //$('#Events').jqxPanel('prepend', '<div style="margin-top: 5px;">ItemClick: ' + $(args).text() + '</div>');
+		
+		document.getElementById('datacontainer').innerHTML="<div id='gridcontainer'></div>";
+		url='beverages.txt';
+		var source =
+            {
+                datatype: "json",
+                datafields: [
+                    { name: 'name' },
+                    { name: 'type' },
+                    { name: 'calories', type: 'int' },
+                    { name: 'totalfat' },
+                    { name: 'protein' },
+                ],
+                id: 'id',
+                url: url
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+            $("#gridcontainer").jqxGrid(
+            {
+                width: 670,
+                source: dataAdapter,
+                theme: theme,
+                columnsresize: true,
+                columns: [
+                  { text: 'Name', datafield: 'name', width: 250 },
+                  { text: 'Beverage Type', datafield: 'type', width: 250 },
+                  { text: 'Calories', datafield: 'calories', width: 180 },
+                  { text: 'Total Fat', datafield: 'totalfat', width: 120 },
+                  { text: 'Protein', datafield: 'protein', minwidth: 120 }
+              ]
             });
-        });       
+            });
+	
+	
+});       

@@ -5,6 +5,8 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>MusicIndiaOnline</title>
+    
+    
 <link rel='Stylesheet' href="jqwidgets/styles/jqx.base.css" type="text/css" />
     <link rel='Stylesheet' href="jqwidgets/styles/jqx.darkblue.css" type="text/css" />
     <script type="text/javascript" src="scripts/jquery-1.7.1.min.js" ></script>
@@ -32,56 +34,32 @@
     <script type="text/javascript" src="jqwidgets/jqxmaskedinput.js"></script> 
     <script type="text/javascript" src="jqwidgets/jqxvalidator.js"> </script>
     <script type="text/javascript" src="music.js" > </script>
-	<script type="text/javascript" >
-	
-function set() {
-$('#flashPlayer').children().each(function(){
-var kid = $(this);
-if(kid.attr('name')==="FlashVars")
-{ 	alert(kid.attr('value'));
-	kid.attr('value');
-	alert(kid.attr('value'));
-}
-}); 
-}
-function play(){
-document.getElementById("flashPlayer").SetVariable("player:jsPlay", "");
-}
-function pause() {
-    document.getElementById("flashPlayer").SetVariable("player:jsPause", "");
-}
-function stop() {
-    document.getElementById("flashPlayer").SetVariable("player:jsStop", "");
-}
-function volume(n) {
-    document.getElementById("flashPlayer").SetVariable("player:jsVolume", n);
-}
-</script>
+
+
+
 <style type="text/css">
 .gbmai {
 	top: 29px;
 	right: 20px;
 }
 .gbmai {
-	background-position: 0 -50px;
-	opacity: .8;
-	font-size: 0;
-	line-height: 0;
-	position: absolute;
-	height: 10px;
-	width: 10px;
-	background-color: #EFEFF1;
-	background-image: url(images/search.png);
+background: url(images/search.png);
+background-position: 0 -50px;
+opacity: .8;
+font-size: 0;
+line-height: 0;
+position: absolute;
+height: 4px;
+width: 10px;
 }
 
 #gbqfi {
-	background-position: -12px -50px;
-	display: inline-block;
-	height: 13px;
-	margin: 7px 19px;
-	width: 14px;
-	background-color: #4A8BF5;
-	background-image: url(images/search.png);
+background: url(images/search.png);
+background-position: -12px -50px;
+display: inline-block;
+height: 13px;
+margin: 7px 19px;
+width: 14px;
 }
 .gbqfb {
 	background-color: #4D90FE;
@@ -113,21 +91,20 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#4d90fe',EndCo
 }
 #gbqfbw {
 	position: relative;
-	left: 530px;
-	top: -15px;
+	left: 450px;
+	top: -22px;
 	width: 80px;
 	margin-top: 0;
 	margin-right: 15px;
 	margin-bottom: 0;
 	margin-left: 15px;
-	background-color: #EFEFF1;
 }
 
 #registration{
 	position: relative;
 	width: 200px;
-	top: -104px;
-	right: 0px;
+	top: -61px;
+	right: auto;
 	float: right;
 	height: 50px;
 	border-top-width: thin;
@@ -213,7 +190,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 */
 .sidebar1 {
 	float: left;
-	width: 254px;
+	width: 20%;
 	padding-bottom: 10px;
 	background-color: #FFF;
 	border-top-style: none;
@@ -228,16 +205,10 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	left: 20px;
 }
 .content {
+	padding: 10px 0;
 	width: 80%;
 	float: left;
 	visibility: visible;
-	height: auto;
-	padding-top: 10px;
-	padding-right: 0;
-	padding-bottom: 10px;
-	padding-left: 0;
-	position: relative;
-	left: 100px;
 }
 
 /* ~~ This grouped selector gives the lists in the .content area space ~~ */
@@ -301,7 +272,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	z-index: 999;
 	margin-right: auto;
 	margin-left: auto;
-	height: 65px;
+	height: 50px;
 }
    .text-input
         {
@@ -333,16 +304,19 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
             margin: 0px;
         }
 #register {
-	position: relative;
-        visibility: hidden;
-
+	position: fixed;
+	right: 20px;
+	float: right;
+	visibility: hidden;
+	top: 51px;
+	z-index: 999;
 }
 .searchbox {
 	float: none;
-	left: 280px;
+	left: 200px;
 	height: 25px;
 	position: relative;
-	top: 14px;
+	top: 8px;
 	letter-spacing: 1px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-style: normal;
@@ -355,76 +329,21 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 }
 #flashPlayer {
 	position: relative;
-	left: 0px;
-	top: 150px;
-	border: thin solid #CCC;
-	height: 25px;
-}
-#login {
-	position: relative;
-	right: 0px;
-	left: 650px;
-	top: -60px;
-        font-size: smaller;
-}
-#datacontainer {
+	left: 280px;
+	top: 10px;
 }
 </style><!--[if lte IE 7]>
 <style>
 .content { margin-right: -1px; } /* this 1px negative margin can be placed on any of the columns in this layout with the same corrective effect. */
 ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
 </style>
-<![endif]-->
-
-</head>
+<![endif]--></head>
 
 <body>
-<div class="headerBar" >
-<textarea class="searchbox"  style="resize:none;"  cols="2"></textarea>
-
-<div id="gbqfbw">
-<button id="gbqfb" aria-label="Google Search" class="gbqfb">
-<span id="gbqfi"></span>
-</button>
-</div>
-<div id="login">
-    <form>
-        <table cellspacing="0"  >
-            <tbody>
-                <tr>
-                    <td > Email</td>
-                    <td> password</td>
-                </tr>
-                <tr>
-                    <td>
-        <input type="text"  tabindex="1" id="username"></input>
-                    </td>
-                    <td>
-        <input type="password" tabindex="2" id="password" ></input>
-                    </td>
-                    <td>
-                        <input type="button" tabindex="3" style=" background-color:#EFEFF1; font-size: smaller;"    value="Log in" />
-                    </td>
-                </tr>
-                <tr><td></td>
-                    <td style=" font-size: xx-small; "  > Forgot Password ?</td>
-
-                </tr>
-       
-            </tbody>
-        </table>
-    </form>
-</div>
-<div  id="registration" >New User ? Register Please. ta ekhane thakbe
-    <!--<span class="gbmai"></span> </div>-->
-
-</div>
-  </div>
 
 <div class="container">
   <div class="sidebar1">
-  <br>
-     <div id='content1'>
+   <div id='content1'>
         
         <div id='jqxWidget' style='width: 110px;'>
             <div id='jqxMenu' style="visibility: hidden;">
@@ -463,24 +382,35 @@ ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it ne
             </div>
         </div>
     </div>
-      <br/>
     <div class="player">
-    <object  id="flashPlayer" type="application/x-shockwave-flash" data="player_mp3_maxi.swf" width="250" height="20">
-    <param name="movie" value="player_mp3_maxi.swf" />
-    <param name="bgcolor" value="#EFEFF1" />
-	<param name="AllowScriptAccess" value="always">
-     <param name="FlashVars" value="configxml=config.xml" />
-</object>
+    Player Goes here
     </div>
     
   <!-- end .sidebar1 -->
-  </div>
-  <div class="content">
-   <button onclick="play()" /> Play</button>
-    
-	
+</div>
+<div class="content">
+</div>
+
 	<div id='datacontainer'>
-            <div id="register" style="visibility:hidden" >
+	</div>
+
+  <!-- end .container --></div>
+<div class="headerBar" >
+<textarea class="searchbox"  style="resize:none;"  cols="2"></textarea>
+<object  id="flashPlayer" type="application/x-shockwave-flash" data="FlashPlayer\template_maxi\player_mp3_maxi.swf" width="250" height="20">
+    <param name="movie" value="FlashPlayer\template_maxi\player_mp3_maxi.swf" />
+    <param name="bgcolor" value="#EFEFF1" />
+    <param name="FlashVars" value="mp3=FlashPlayer\template_maxi\test.mp3&amp;width=250&amp;showstop=1&amp;showvolume=1&amp;loadingcolor=ededed&amp;bgcolor=EFEFF1&amp;bgcolor1=EFEFF1&amp;bgcolor2=EFEFF1&amp;buttoncolor=black" />
+</object>
+<div id="gbqfbw">
+<button id="gbqfb" aria-label="Google Search" class="gbqfb">
+<span id="gbqfi"></span>
+</button>
+</div>
+<div  id="registration" ><span class="gbmai"></span></div> 
+
+</div>
+  <div id="register">
 <div><h3>Register</h3></div>
         <div>
             <form id="testForm" action="./">
@@ -509,7 +439,15 @@ ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it ne
                         <td>E-mail:</td>
                         <td><input type="text" id="emailInput" class="text-input" /></td>
                     </tr>
-                  <tr>
+                    <tr>
+                        <td>Phone:</td>
+                        <td><div id="phoneInput"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Zip code:</td>
+                        <td><div id="zipInput"></div></td>
+                    </tr>
+                    <tr>
                         <td colspan="2" style="padding: 5px;"><div id="acceptInput" style="margin-left: 50px;">I accept terms</div></td>
                     </tr>
                     <tr>
@@ -519,10 +457,5 @@ ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it ne
             </form>
         </div>
     </div>
-	</div>
-  <!-- end .content -->
-  </div>
-  <!-- end .container -->
-</div>
 </body>
 </html>
