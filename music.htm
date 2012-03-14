@@ -113,8 +113,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#4d90fe',EndCo
 }
 #gbqfbw {
 	position: relative;
-	left: 530px;
-	top: -15px;
+	left: 535px;
+	top: -41px;
 	width: 80px;
 	margin-top: 0;
 	margin-right: 15px;
@@ -124,10 +124,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#4d90fe',EndCo
 }
 
 #registration{
-	position: relative;
+	position: absolute;
 	width: 200px;
-	top: -104px;
-	right: 0px;
 	float: right;
 	height: 50px;
 	border-top-width: thin;
@@ -143,6 +141,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#4d90fe',EndCo
 	border-bottom-color: #CCC;
 	border-left-color: #CCC;
 	background-color: #EFEFF1;
+	top: 0px;
+	right: 0px;
 }
 
 body {
@@ -332,6 +332,11 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
             display: inline-block;
             margin: 0px;
         }
+#logo {
+	position: relative;
+	top: 5px;
+	left: 30px;
+}
 #register {
 	position: relative;
         visibility: hidden;
@@ -339,10 +344,10 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 }
 .searchbox {
 	float: none;
-	left: 280px;
+	left: 148px;
 	height: 25px;
 	position: relative;
-	top: 14px;
+	top: 17px;
 	letter-spacing: 1px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-style: normal;
@@ -364,10 +369,23 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	position: relative;
 	right: 0px;
 	left: 650px;
-	top: -60px;
-        font-size: smaller;
+	top: -85px;
+	font-size: smaller;
 }
 #datacontainer {
+}
+.playpng {
+	background-image: url(images/play_button.png);
+	background-repeat: no-repeat;
+	height: 18px;
+	width: 20px;
+}
+.playpng:hover{
+	background-image: url(images/play_button.png);
+	background-repeat: no-repeat;
+	height: 18px;
+	width: 20px;
+	background-position: 1px;
 }
 </style><!--[if lte IE 7]>
 <style>
@@ -380,6 +398,7 @@ ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it ne
 
 <body>
 <div class="headerBar" >
+<img src="images/Logo.png" id="logo" align="left"  />
 <textarea class="searchbox"  style="resize:none;"  cols="2"></textarea>
 
 <div id="gbqfbw">
@@ -388,7 +407,7 @@ ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it ne
 </button>
 </div>
 <div id="login">
-    <form>
+<form>
         <table cellspacing="0"  >
             <tbody>
                 <tr>
@@ -465,6 +484,7 @@ ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it ne
     </div>
       <br/>
     <div class="player">
+	Now Playing : <span id="songname"> </span>
     <object  id="flashPlayer" type="application/x-shockwave-flash" data="player_mp3_maxi.swf" width="250" height="20">
     <param name="movie" value="player_mp3_maxi.swf" />
     <param name="bgcolor" value="#EFEFF1" />
@@ -476,10 +496,9 @@ ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it ne
   <!-- end .sidebar1 -->
   </div>
   <div class="content">
-   <button onclick="play()" /> Play</button>
-    
+    <div class="playpng" onclick="play()"> </div>
 	
-	<div id='datacontainer'>
+<div id='datacontainer'>
             <div id="register" style="visibility:hidden" >
 <div><h3>Register</h3></div>
         <div>
